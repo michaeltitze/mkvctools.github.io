@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+    <title>Document</title>
+</head>
+<body> 
+    <div>
+        <div class="laufzeit">
+            <ul class="laufzeit">
+            <li ><a id="short">Kurz</a></li>
+            <li ><a id="mid">Mittel</a></li>
+            <li ><a id="long" >Lang</a></li>
+        </ul>
+        </div>
+        <div class="chart">
+        <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+  <script>
+      let myChart = document.getElementById('myChart').getContext('2d');
+        var state ="long";
+        var long = document.getElementById('long');
+        var short = document.getElementById('short');
+        var mid = document.getElementById('mid');
+        jahre = ['2022','2023','2024','2025','2026','2027','2028','2029','2030'];
+        daten=[200000,160000,205000,240000,300000,410000,550000,700000,1000000];
+
+
+
+
+        short.onclick = function(){
+            short.style.backgroundColor = 'darkblue';
+            mid.style.backgroundColor = 'orangered';
+            long.style.backgroundColor = 'orangered';
+            state = "short";
+            jahre = ['2022','2023','2024'];
+            daten = [200000,160000,205000];
+            chart.data.labels = jahre;
+            chart.data.datasets[0].data = daten;
+            chart.update();
+
+        }
+
+        mid.onclick = function(){
+            short.style.backgroundColor = 'orangered';
+            mid.style.backgroundColor = 'darkblue';
+            long.style.backgroundColor = 'orangered';
+
+
+            state =" mid ";
+            
+            jahre = ['2022','2023','2024','2025','2026'];
+            daten = [200000,160000,205000,240000,300000];
+            chart.data.labels = jahre;
+            chart.data.datasets[0].data = daten;
+            chart.update();
+         
+        }
+
+        long.onclick = function(){
+
+            short.style.backgroundColor = 'orangered';
+            mid.style.backgroundColor = 'orangered';
+            long.style.backgroundColor = 'darkblue';
+
+            state =" long ";
+            jahre = ['2022','2023','2024','2025','2026','2027','2028','2029','2030'];
+            daten=[200000,160000,205000,240000,300000,410000,550000,700000,1000000];
+            chart.data.labels = jahre;
+            chart.data.datasets[0].data = daten;
+            chart.update();
+            
+        }
+
+
+
+
+        
+
+
+      let chart = new Chart (myChart,{
+        type:'line',
+        
+        data:{
+            backgroundColor: '#01103D',
+            labels: jahre,
+            datasets:[{
+                label:['Ihr Investment'],
+                data: daten,
+                tension: 0.5,
+                color: 'white',
+                borderColor: '#D9541A',
+                backgroundColor: '#01103D',
+        
+            }]
+
+        },
+         options: { 
+            responsive: true,
+            legend: {
+                labels: {
+                    fontColor: "blue",
+                    fontSize: 18
+                }
+            },
+        
+
+                scales: {
+
+                y: {
+                    fontColor: "rgba(240,240,240,0.5)",
+                    stacked: true,
+                    grid: {
+                        display: true,
+                        color: "rgba(240,240,240,0.1)"
+                    }
+                  },
+                       
+                  
+                x: {
+                    grid: {
+                    display: true,
+                    color: "rgba(240,240,240,0.1)",
+                    fontColor: "white",
+
+                        },
+                    
+                    fontColor: "white",
+                        }
+                
+         
+
+            
+
+                    }
+            }
+        }
+      
+      
+        
+
+      )
+  
+  </script>
+
+
+</body>
+</html>

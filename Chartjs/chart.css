@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+.chart-field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #02094a, #030c42);
+  
+}
+
+.chart-body {
+    padding: 25px;
+    border-radius: 20px;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+   /* background-color: #2e2e2e; */
+}
+
+.chart-serie{
+    position: relative;
+    width: 50px;
+    border-radius: 3px;
+    background-color: var(--color);
+    transform-origin: bottom center;
+    animation: rise 3s linear forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+   /* box-shadow: rgba(255,255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;*/
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
+}
+
+.chart-title{
+    text-align: center;
+    position: relative;
+    font-size: 0.8em;
+    top: 8px;
+    color: #fff;
+}
+
+@keyframes rise {
+    0% 
+    {
+        height: 10%;
+    }
+    100%
+    {
+        height: var(--i);
+    }
+
+}

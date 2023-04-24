@@ -1,0 +1,426 @@
+/* GLOBAL */
+
+
+*,*:before,*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /*background: linear-gradient(90deg,#02025b,#03142e);*/
+    background-color: #03142e;
+    color: #fefefe;
+    font-family: 'Helvetica',sans-serif;
+}
+
+.orange-text{
+    color:#ea5600;
+}
+
+.justify-center{
+    display: flex;
+    justify-content: center;
+}
+
+.tool-wrapper{
+    max-width: 90%;
+    height:fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    color: #fefefe;
+    border: 10px;
+}
+
+#tabs{
+    width: 100%;
+}
+
+.tab-menu{
+    top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content:center;
+    top: 20px;
+    color: #fefefe;
+    text-decoration: none;
+    font-size: 1.2em;
+    list-style: none;
+    margin-left: 0 !important;
+}
+
+
+.tab-active{
+    background-color: #ea5600 !important;
+}
+
+.tab-btn{
+    width: 150px;
+    height: 50px;
+    border-style: none;
+    color: #fefefe;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+
+.tab-link{
+    color: #fefefe;
+    text-decoration: none;
+}
+.tool-container{
+    margin: 0 auto;
+    margin-top: 20px;
+    color:#fefefe;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+ 
+}
+
+@media screen and (max-width:1060px) {
+    body{
+        width: 100%;
+        
+    }
+
+    .tool-container{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        width: 100%;
+        margin: 0 auto;
+        height: 950px;
+    }
+
+    .complex-main-area{
+        width: 100% !important;
+        margin-top: 100px !important;
+    }
+
+   
+    .science-sidebar{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        height: 200px;
+    }
+
+    .tool-sidebar, .main-area, .main-container{
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .container-expected{
+        width: 100% !important;
+    }  
+
+    .range-container{
+        height: 200px;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+
+    }
+
+    .range-container h3{
+        line-height: 0.5;
+    }
+
+}
+
+@media screen and (max-width:670px) 
+{
+
+    .tool-container{
+        height: 1500px;
+    }
+    .tvpi-container{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .section-2{
+       display: flex !important;
+       flex-direction: column !important;
+       justify-content: center !important;
+       align-items: center !important;
+       width: 95% !important;
+       margin: 0 auto !important;   
+    }
+    .roichart-container{
+        margin-top: 100px;
+    }
+    .roichart-container,.linechart-container,.probchart-container,.section-2,.tvpi-container{
+        width: 100%;
+    }
+    .range-container{
+        width: 400px;
+    }
+
+    
+}
+
+@media screen and (max-width: 340px) {
+    .container-expected{
+        flex-direction: column !important;
+    }
+
+    .expected{
+        width: 80% !important;
+        height: 200px !important;
+    }
+
+    .range-container{
+        width: 300px;
+    }
+
+    
+}
+
+
+/*sidebar-left*/
+
+.tool-sidebar{
+    width: 30%;
+    margin-left: 20px;
+    overflow: visible;   
+}
+
+
+
+.tool-propability, .investment-period, .money-slider{
+    min-height: 150px;
+    display: block;
+    text-align: center;
+}
+
+.tool-propability ul, .investment-period ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: inherit;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.tool-propability ul, .tool-propability li, .investment-period ul, .investment-period li{
+    list-style: none;
+    width: 100%;
+}
+
+
+
+.tool-propability button, .investment-period button{
+    width: 80%;
+    min-height: auto;
+    background-color: transparent;
+    height: 50px;
+    margin-right: 20px;
+    color: #fefefe;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.tool-propability button:hover,.investment-period button:hover, .tab-btn:hover{
+    background-color: rgba(200,200,200,0.3);
+    cursor: pointer;
+}
+
+.sidebar-title{
+
+}
+
+.flex-column-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+/*SIDEBAR SLIDER*/
+
+.range-container{
+    height: 200px;
+    max-width: 600px;
+}
+
+#money-slider, #startuprange, #jahrrange, #probrange, #ticketrange{
+
+    height: 7px;
+    width: 80%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+/*main section*/
+
+.main-area{
+
+    z-index: 0;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.main-container{
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.d-flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startups{
+    max-width: 800px;
+    width: 80%; 
+    border-radius: 20px;
+    margin: 0 auto;
+    height: 200px;
+    margin-top: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-expected{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    height: 100px;
+    width: 80%;
+    
+}
+
+.expected{
+    width: 48%;
+    border-radius: 10px;
+    height: 100px;
+
+
+}
+.shadow{
+    box-shadow: 0 5px 20px rgba(255,255,255,0.05);
+}
+
+
+.active{
+    background-color: #ea5600 !important;
+}
+
+.year-active{
+    background-color: #ea5600 !important;
+}
+
+
+
+/*Komplex Charts */
+
+
+#barchart-container{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+#barchart{
+    max-width: 180px;
+    height: 200px;
+}
+
+#roichart{
+    max-height: 200px;
+}
+
+
+#linechart{
+    max-height: 200px;
+}
+
+#probchart{
+    width: 300px;
+    max-height: 200px;
+}
+
+
+.linechart-container, .probchart-container , .roichart-container{
+    height: 200px;
+}
+
+.linechart-container,.roichart-container{
+    width: 300px;
+}
+
+.probchart-container, .roichart-container{
+    width: 300px;
+    height: 200px !important;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.section-2{
+
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.complex-main-area{
+
+    z-index: 0;
+    height: 100%;
+    width: 70%;  
+    display: block;  
+}
+
+.tvpi-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 30px;
+}
+
+
+
+.bar-feld, .line-feld{
+    text-align: center;
+}
+
+#tvpi{
+    text-align: center;
+    margin-bottom: 20px;
+}

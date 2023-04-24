@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to Message Konverter</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <header>
+        <nav>
+	<form>
+		<label for="csvFile" class="custom-file-upload">CSV-Datei auswählen:</label>
+		<input type="file" id="csvFile" name="csvFile">
+		<button class="gen-button"type="button" onclick="showData()">Show Data</button>
+	</form> 
+ 
+    <p>CSV to Linkedin Message Converter</p>
+    </nav>
+    </header>   
+
+        <div class="table-container">
+        </div>
+
+	<div id="output"></div>
+
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+      </head>
+      
+    <script src="table.js"></script>
+</body>
+</html> 

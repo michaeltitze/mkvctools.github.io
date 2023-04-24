@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="tool-wrapper">       
+            <div id="tabs">
+                <ul class="tab-menu">
+                    <li><a href="#tabs-1"><button class="tab-btn tab-active" id="simple-btn">Simpel</button></a></li>
+                    <li><a href="#tabs-2"><button class="tab-btn" id="complex-btn">Scientific</button></a></li>
+                </ul>
+    <div id="tabs-1">
+
+       <div class="tool-container">
+        
+
+        <div class="tool-sidebar">
+            <div class="tool-propability">
+                <h3 class="sidebar-title">Gewinnwahrscheinlichkeit</h4>
+            <ul>
+            <li><div class="input-field"></div><button class="prob-button btn-10 shadow" id="btn-10" onclick="changeStartup(10)"><span id="10-percent">10</span>%</button></li>
+            <li><div class="input-field"></div><button class="prob-button btn-50 shadow" id="btn-50" onclick="changeStartup(50)"><span id="50-percent">50</span>%</button></li>
+            <li><div class="input-field"></div><button class="prob-button btn-90 shadow active" id="btn-90" onclick="changeStartup(200)"><span id="90-percent">90</span>%</button></li>
+
+        </ul></div>
+        <div class="money-slider">
+            <h3 class="sidebar-title">Ihr Investment</h3>
+            <p><span id="money-val">200000</span><span> €</span></p>
+            <input type="range" id="money-slider" min="200000" max="5000000" step="10000" value="1000000">
+        </div>
+
+        <div class="investment-period">
+
+            <h3 class="sidebar-title">Investitionszeitraum</h3>
+
+        <ul>
+            <li><div class="input-field"></div><button class="year-btn shadow year-active" id="btn-4-y"><span id="4-years">4</span> Jahre</button></li>
+            <li><div class="input-field"></div><button class="year-btn shadow" id="btn-6-y"><span id="6-years">6</span> Jahre</button></li>
+            <li><div class="input-field"></div><button class="year-btn shadow" id="btn-10-y"><span id="10-years">10</span> Jahre</button></li>
+
+        </ul></div>
+    
+    
+    </div>
+
+
+        <div class="main-area ">
+
+        <div class="main-container">
+            <div class="startups shadow">
+                <h1>Anzahl der Startups:</h1><br>
+                <h1 id="startup-num">200</h1>
+            </div>
+            <div class="container-expected">
+                <div class="expected shadow flex-column-center ">
+                    <p>Erwartetes Ergebnis</p>
+                    <p><span id="expected-result"></span> €</p>
+
+                </div>
+                <div class="expected shadow flex-column-center">
+                    <p>Ideales Ergebnis</p>
+                    <p><span id="ideal-case"></span> €</p>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
+        <div id="tabs-2">
+            <div class="tool-container">
+                <div class="tool-sidebar science-sidebar">
+
+             <div class="range-container">
+                <h3 class="sidebar-title">Ticketgröße: <span class="ticket-feld" id="ticketfeld"></span> <span>€</span></h3>
+
+                <input type="range" id="ticketrange" value="10000000"  min="200000" max="10000000" step="10000">
+
+                <h3 class="sidebar-title">Anzahl Startups: <span class="startup-feld" id="startupfeld"></span></h3>
+                
+                  <input type="range" id="startuprange" value="400"  min="0" max="400" step="1">
+
+                  </div>
+
+                <!-- <h3 class="sidebar-title">Investitionszeitraum: <span class="jahr-feld" id="jahrfeld"></span> <span>Jahre</span></h3>             
+                  <input type="range" id="jahrrange" oninput="displayYear(this);" value="10"  min="1" max="10" step="1">   -->                             
+                </div>
+
+                <div class="complex-main-area">
+                    <h2 id="tvpi">TVPI:</h2>
+                    <p style="text-align: center;"><span class="orange-text">max: </span> <span id="tvpi-max" class="orange-text"></span> min: <span id="tvpi-min"></span></p>
+                    <div class="tvpi-container">
+                    <div class="barchart-container" id="barchart-container">
+                    <canvas id="barchart"></canvas>
+                    </div>
+
+
+                    <div class="linechart-container" id="linechart-container">
+                    <p class="line-feld" id="linefeld"></p>
+                    <canvas id="linechart"></canvas>
+                    </div>
+                    </div>
+
+
+                    <div class="section-2">
+                    <div class="probchart-container" id="probchart-containter">
+                        <h3 class="sidebar-title">Gewinnwahrscheinlichkeit: <i title="Dies ist eine Info"></i></h3>
+                        <p><span class="prob-feld" id="probfeld"></span> <span>%</span></p>
+                        <p> </p>
+
+                        <canvas id="probchart"></canvas> 
+                        </div>
+
+                        <div class="roichart-container" id="roichart-container">
+                            <h3 class="sidebar-title">Ergebnis: </h3>
+                                <p><span class="roi-feld" id="roifeldmin"></span> <span>€  <span id="roifeldmax" class="orange-text"></span></p>
+        
+
+                            <canvas id="roichart"></canvas>
+                            </div>
+
+                        </div>
+                </div>
+                </div>
+        
+        
+            </div>
+        </div>
+</div>  
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+
+    
+    <script src="./script/script.js"></script>
+    <script src="./script/complex-script.js"></script>
+
+</body>
+</html>
